@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home()
     {
-    	$messages = [
+    	/*$messages = [
             [
                 'id' => 1,
                 'content' => 'Este es el primer mensaje!',
@@ -31,10 +32,12 @@ class PagesController extends Controller
             ]
             
 
-		];
+		];*/
 
        // $messages = [];
 
+        $messages = Message::all();
+        //dd($messages);
 	    return view('welcome', [
 	    	'messages' => $messages,
 	    ]);

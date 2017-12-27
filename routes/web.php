@@ -13,4 +13,6 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::get('/acerca', 'PagesController@about');
+Route::get('/messages/{message}', 'MessagesController@show');
+
+Route::post('/messages/create', 'MessagesController@create');
