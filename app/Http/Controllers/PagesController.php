@@ -33,10 +33,10 @@ class PagesController extends Controller
             
 
 		];*/
-
+        $messages = Message::orderBy('id', 'DESC')->paginate(10);
        // $messages = [];
 
-        $messages = Message::all();
+        //$messages = Message::paginate(10);
         //dd($messages);
 	    return view('welcome', [
 	    	'messages' => $messages,
