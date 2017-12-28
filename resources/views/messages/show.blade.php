@@ -2,7 +2,12 @@
 
 
 @section('content')
-<h1>Mensaje id: {{ $message->id }} </h1>
-<p>{{ $message->content }}</p>
-<img src="{{ $message->image }}" alt="">
+
+<h1 class="h3">Mensaje id: {{ $message->id }}</h1>
+<img class="img-thubnail" src="{{ $message->image }}" alt="">
+<p class="card-text"> {{ $message->content }} 
+	<small class="text-muted">{{ $message->created_at }}</small>
+</p>
+
+
 @endsection

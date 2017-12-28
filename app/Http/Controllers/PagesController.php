@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Mensages;
+
+
+use App\Message;
+
 use Illuminate\Http\Request;
 
 
@@ -35,11 +38,10 @@ class PagesController extends Controller
 
 		];*/
 
+        $messages = Message::orderBy('id', 'DESC')->paginate(10);
        // $messages = [];
 
-        //trae todos los mensajes
-        $messages = Mensages::all();
-
+        //$messages = Message::paginate(10);
         //dd($messages);
 
 	    return view('welcome', [
