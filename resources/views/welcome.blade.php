@@ -16,7 +16,7 @@
 </div>
 <div class="row">
 	<form action="/messages/create" method="post">
-		<div class="form-group">
+		<div class="form-group col-12">
 			{{ csrf_field() }}
 			<input type="text" name="message" class="form-control @if ($errors->has('message')) is-invalid @endif" placeholder="Qué estás pensando?">	
 			
@@ -31,14 +31,10 @@
 <div class="row">
 	@forelse ($messages as $message)
 	<div class="col-md-6">
-		<img class="img-thumbnail" src="{{ $message->image }}"> 
-		<p class="card-text">
-			{{ $message->content }}
-			<a href="/messages/{{ $message->id }}">Leer más</a>
-		</p>
+		@include('messages.message')
 	</div>
 	@empty
-		<p>No hay mensajes destacados</p>	
+		<p class="col-md-6">No hay mensajes destacados</p>	
 	@endforelse
 
 	@if(count($messages))
