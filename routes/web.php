@@ -9,8 +9,24 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+**MIGRACIONES
+php artisan make:migration create_messages_table --create messages 
+
+
+php artisan migrate
+
+**ALTERAR BD
+php artisan make:migration add_create_at_index_to_mensages_table --table mensages  
+
+**CREAR MODELOS
+php artisan make:model
+
+
+**CREAR CONTROLLERS
+php artisan make:controller Mensage
+
 */
 
 Route::get('/', 'PagesController@home');
 
-Route::get('/acerca', 'PagesController@about');
+Route::get('/messages/{id}', 'MensagesController@show');
