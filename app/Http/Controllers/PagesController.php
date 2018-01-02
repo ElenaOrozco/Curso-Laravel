@@ -38,7 +38,8 @@ class PagesController extends Controller
 
 		];*/
 
-        $messages = Message::orderBy('id', 'DESC')->paginate(10);
+        $messages = Message::latest()->paginate(10);
+
        // $messages = [];
 
         //$messages = Message::paginate(10);
