@@ -27,16 +27,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    //Relaciones
+    //Relaciones --un usuario tiene muchos mensajes --
     public function messages(){
         return $this->hasMany(Message::class)->orderBy('created_at', 'desc');
     }
 
+
+    //Que usuarios sigo    belongsToMany   tabla, foreingn key y related  --buscar los que yo sigo--
     public function follows(){
         return $this->belongsToMany(User::class, 'followers', 'user_id', 'followed_id');
     }
 
-
+    //Que usuarios me siguen  
     public function followers(){
         return $this->belongsToMany(User::class, 'followers', 'followed_id', 'user_id');
     }

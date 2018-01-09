@@ -43,6 +43,9 @@ Route::get('/home', 'HomeController@index');
 //Aquien sigue
 Route::get('/{username}/follows', 'UsersController@follows');
 
+
+//Quienes lo  siguen
+Route::get('/{username}/follows', 'UsersController@follows');
 //Route::get('/{username}/follows', 'UsersController@follows');
 
 Route::get('/{username}', 'UsersController@show');
